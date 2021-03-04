@@ -25,8 +25,8 @@ export OF_SCREEN_H="2400"
 export OF_HIDE_NOTCH=1
 export OF_CLOCK_POS=1
 export OF_ALLOW_DISABLE_NAVBAR=0
-export TARGET_DEVICE_ALT="a51, a51ns, a51nsxx"
-export OF_TARGET_DEVICES="a51, a51ns, a51nsxx"
+export TARGET_DEVICE_ALT="m31, m31ns, m31nsxx"
+export OF_TARGET_DEVICES="m31, m31ns, m31nsxx"
 #export OF_USE_SYSTEM_FINGERPRINT=1
 export OF_USE_TWRP_SAR_DETECT=1
 export OF_QUICK_BACKUP_LIST="/super;/boot;/prism_image;/optics_image"
@@ -40,4 +40,4 @@ export OF_STATUS_H="98"
 
 #R11
 export FOX_R11=1
-export FOX_BUILD_TYPE=Beta
+export FOX_BUILD_TYPE=BokuWaBenkyoWaDekinai

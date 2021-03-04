@@ -11,7 +11,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/a51nsxx
+DEVICE_PATH := device/samsung/m31nsxx
 
 # Architecture
 TARGET_ARCH := arm64
@@ -39,8 +39,6 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image_A11
-#TARGET_KERNEL_SOURCE := kernel/samsung/a51
-#TARGET_KERNEL_CONFIG := exynos9610-a51xx_caliban_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos9611
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --header_version 2 --board SRPSG30B004RU
 
@@ -95,5 +93,4 @@ BOARD_SUPER_PARTITION_ERROR_LIMIT := 5841633848
 TARGET_COPY_OUT_VENDOR := vendor
 
 #Android 11 details
-#BUILD_ID := RP1A.200720.012
 PLATFORM_VERSION := 11
