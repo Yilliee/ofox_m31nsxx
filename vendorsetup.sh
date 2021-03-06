@@ -22,7 +22,7 @@ FDEVICE="m31nsxx"
 
 fox_get_target_device() {
 local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
-   if [ -n "$chkdev" ]; then 
+   if [ -n "$chkdev" ]; then
       FOX_BUILD_DEVICE="$FDEVICE"
    else
       chkdev=$(set | grep BASH_ARGV | grep -w $FDEVICE)
@@ -43,7 +43,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_DYNAMIC_SAMSUNG_FIX=1
 	#export FOX_REMOVE_AAPT=1 # Automatically done by dynamic_fix var
 	#export FOX_REMOVE_BASH=1 # Automatically done by dynamic_fix var
-	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/13520000.ufs/by-name/recover>
+	export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/platform/13520000.ufs/by-name/recovery"
 
 	# Extra build vars
 	#export FOX_REPLACE_BUSYBOX_PS=1 # Causes Bootloop
@@ -61,6 +61,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_HIDE_NOTCH=1
 	export OF_CLOCK_POS=1
 	export OF_ALLOW_DISABLE_NAVBAR=0
+	export OF_TARGET_DEVICES="m21, m21ns, m21nsxx"
 	export TARGET_DEVICE_ALT="m31, m31ns, m31nsxx"
 	export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
 	export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
