@@ -83,6 +83,21 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	# maximum permissible splash image size (in kilobytes); do *NOT* increase!
 	export OF_SPLASH_MAX_SIZE=104
 
+	# Prebuilt Kernel and Dtbs
+	if [ "$ANDROID_OUTPUT_VERSION" = "11" ]; then
+	        export BOARD_PREBUILT_DTBOIMAGE="device/samsung/m31nsxx/prebuilts/A11/dtbo"
+		export BOARD_PREBUILT_DTBIMAGE_DIR="device/samsung/m31nsxx/prebuilts/A11/dtb"
+	        export TARGET_PREBUILT_KERNEL="device/samsung/m31nsxx/prebuilts/A11/Image"
+	elif [ "$ANDROID_OUTPUT_VERSION" = "10" ]; then
+        	export BOARD_PREBUILT_DTBOIMAGE="device/samsung/m31nsxx/prebuilts/A10/dtbo"
+	        export BOARD_PREBUILT_DTBIMAGE_DIR="device/samsung/m31nsxx/prebuilts/A10/dtb"
+	        export TARGET_PREBUILT_KERNEL="device/samsung/m31nsxx/prebuilts/A10/Image"
+	else
+	      echo -e "${WHITEONRED}-- Build OrangeFox: FATAL ERROR! ${NC}"
+	      echo -e "${WHITEONRED}-- PLEASE EXPORT THE VAR ANDROID_OUTPUT_VERSION to the version your are building "
+	      abort 100
+	fi
+
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
   	   export | grep "FOX" >> $FOX_BUILD_LOG_FILE

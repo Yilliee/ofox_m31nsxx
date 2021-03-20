@@ -38,7 +38,6 @@ TARGET_NO_RADIOIMAGE := true
 # Kernel
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/Image
 BOARD_KERNEL_CMDLINE := androidboot.hardware=exynos9611
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --header_version 2 --board SRPSG30B004RU
 
@@ -67,8 +66,6 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo
-BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilts/dtb
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 PLATFORM_SECURITY_PATCH := 2021-02-01
@@ -92,9 +89,9 @@ BOARD_SUPER_PARTITION_ERROR_LIMIT := 5841633848
 #Rsync error fix or Fixing trying to copy non-existance files
 TARGET_COPY_OUT_VENDOR := vendor
 
-#Android 11 details
+# Extra Unorganized stuff
 PLATFORM_VERSION := 11
 TARGET_KERNEL_SOURCE := kernel/samsung/m31
 TARGET_KERNEL_CONFIG := bluefly_m31_defconfig
-#TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_COMPILE := true
 TW_EXCLUDE_NANO := true
